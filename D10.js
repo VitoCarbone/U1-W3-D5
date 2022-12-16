@@ -36,7 +36,7 @@ console.log(me);
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
 delete me.age;
-console.log("Rimosso 'age'",me;)
+console.log("Rimosso 'age'",me);
 
 
 /* ESERCIZIO E
