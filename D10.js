@@ -25,10 +25,10 @@ console.log("Il numero prodotto è: ", random);
 /* ESERCIZIO C
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
 */
-const me{
-  name = "Vito",
-  surname= "Carbone",
-  age ="29"
+const me = {
+  name : "Vito",
+  surname: "Carbone",
+  age : "29",
 }
 console.log(me);
 
@@ -50,47 +50,95 @@ console.log("Aggiunte le skills",me);
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
+me.skills.push("hobby")
 
 
 
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
-
+me.skills.pop()
 // Funzioni
 
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+const dice = function(){
+  return Math.floor(Math.random()*6)+1
+}
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+const whoIsBigger = function(a,b){
+  if (a<b) return a
+  else return b
+}
+
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+const splitMe = (frase) => { 
+  return frase.split(" ")
+}
+splitMe ("I Love Coding")
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+const deleteOne = (stringa, booleano) =>{
+  if (booleano){
+    return stringa.slice(1)
+  }else return stringa.slice (0, -1)
+}
+console.log(deleteOne("Vito", true))
+
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+/*const onlyLetters = (frase) =>{
+  let arrayDiLettere = frase.split("")
+  console.log(arrayDiLettere)
+}
+onlyLetters ("I have 4 dogs")
+*/
+const onlyLetters = (frase) =>{
+  let arrayDiLettere = frase.split("")
+  arrayDiLettere.forEach((lettera)=>{
+    if(isNaN(lettera)){
+      console.log(lettera)
+      arrayFinale.push(lettera)
+    }
+  })
+  }
+onlyLetters ("I have 4 dogs")
+//minuto 32
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+//vitocarbone@gmail.com
+const isThisAnEmail =(email) =>{
+  return email.includes("@") && (email.includes(".it")|| email.incluse(".com"))
+}
+
+
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+const whatDayIsIt = ()=>{
+  let oggi = new Date()
+  oggi.getDay
+}
+
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -104,6 +152,19 @@ console.log("Aggiunte le skills",me);
       values: [3, 3, 4]
   }
 */
+const rollTheDices =(numero)=> {
+  const riusultato ={
+    sum: 0,
+    values: []
+  }
+  for( let i=o; i<numero; i++){
+    let numeroLanciato = dice()
+    riusultato.sum= numeroLanciato
+    riusultato.values.push(numeroLanciato)
+  }
+}
+rollTheDices()
+
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
